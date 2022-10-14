@@ -1,0 +1,36 @@
+body {
+    background-color: white;
+    margin:0;
+    padding:0;
+  }
+
+
+.basic_animations_title{
+    color: black;
+    font-size:x-large;
+    font-weight: bold;
+}
+
+.basic_button {
+    background-color: white;
+    border: none;
+    color: darkslategray;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    float: left;
+    transition-duration: 0.4s;
+    border: 2px solid #466791;
+  }
+  .basic_button:hover {
+    background-color: #466791;
+    color: white;
+  }
+
+
+  .centered_div {
+    display: flex;
+    justify-content: center;
+    }

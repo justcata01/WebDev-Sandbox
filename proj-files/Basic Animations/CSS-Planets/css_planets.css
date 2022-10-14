@@ -1,0 +1,369 @@
+body{
+    margin:0;
+    padding:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #272836;
+}
+
+.debug_text{
+    width:100%;
+    height: 100%;
+    position: absolute;
+}
+
+.actual_text{
+    user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+    position:absolute;
+    text-align: top;
+    color: white;
+}
+
+.planet-container{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    transform: scaleX(5);
+}
+
+.star{
+    width: 150px;
+    height:150px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: rgb(248,244,163);
+    transform: scaleX(0.2);
+    box-shadow: 0 0 60px rgb(253,203,163), 0 0 98px rgb(184,160, 26);
+}
+
+.planet {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transform: scaleX(-0.2);
+}
+
+.planet:after{
+    content: '';
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+}
+
+.planet-index{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.singular-planet{
+    width: 60px;
+    height: 60px;
+    animation: correct 12s infinite linear;
+    position: absolute;
+}
+
+.route{
+    width:100%;
+    height:100%;
+    animation: rotate 12s infinite linear;
+    position: absolute;
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes correct {
+    0%{
+        transform: rotateZ(360deg);
+    }
+
+    100%{
+        transform: rotateZ(0deg);
+    }
+}
+
+
+
+@keyframes firstPlanetRender{
+    0%{
+        background: linear-gradient(-90deg, darkblue 50%, blue 50%)
+    }
+
+    12%{
+        background: linear-gradient(-90deg, darkblue 50%, blue 50%)
+    }
+    12.1%{
+        background: linear-gradient(90deg, darkblue 50%, blue 50%)
+    }
+    62%{
+        background: linear-gradient(90deg, darkblue 50%, blue 50%)
+    }
+    62.1%{
+        background: linear-gradient(-90deg, darkblue 50%, blue 50%)
+    }
+
+    100%{
+        background: linear-gradient(-90deg, darkblue 50%, blue 50%)
+    }
+
+}
+@keyframes firstPlanetRenderRotater{
+    0%{
+        transform: scaleX(-0.2); background-color: blue;
+    }
+    12%{
+        transform: scaleX(-1); background-color: blue;
+    }
+    12.1%{
+        transform: scaleX(1); background-color: blue;
+    }
+
+    37%{
+        transform: scaleX(0); background-color: blue;
+    }
+
+    37.1%{
+        transform: scaleX(0); background-color: darkblue;
+    }
+
+    62%{
+        transform: scaleX(-1); background-color: darkblue;
+    }
+    62.1%{
+        transform: scaleX(1); background-color: darkblue;
+    }
+
+    87%{
+        transform: scaleX(0); background-color: darkblue;
+    }
+    87.1%{
+        transform: scaleX(0); background-color: blue;
+    }
+
+    100%{
+        transform: scaleX(-0.2); background-color: blue;
+    }
+}
+
+@keyframes secondPlanetRender{
+    0%{
+        background: linear-gradient(-90deg, darkred 50%, red 50%)
+    }
+
+    40%{
+        background: linear-gradient(-90deg, darkred 50%, red 50%)
+    }
+    40.1%{
+        background: linear-gradient(90deg, darkred 50%, red 50%)
+    }
+    90%{
+        background: linear-gradient(90deg, darkred 50%, red 50%)
+    }
+    90.1%{
+        background: linear-gradient(-90deg, darkred 50%, red 50%)
+    }
+
+    100%{
+        background: linear-gradient(-90deg, darkred 50%, red 50%)
+    }
+
+}
+
+@keyframes secondPlanetRenderRotater{
+    0%{
+        transform: scaleX(0.5); background-color: red;
+    }
+    15%{
+        transform: scaleX(0); background-color: red;
+    }
+    15.1%{
+        transform: scaleX(0); background-color: darkred;
+    }
+
+    40%{
+        transform: scaleX(-1); background-color: darkred;
+    }
+
+    40.1%{
+        transform: scaleX(1); background-color: darkred;
+    }
+
+    65%{
+        transform: scaleX(0); background-color: darkred;
+    }
+    65.1%{
+        transform: scaleX(0); background-color: red;
+    }
+
+    90%{
+        transform: scaleX(-1); background-color: red;
+    }
+    90.1%{
+        transform: scaleX(1); background-color: red;
+    }
+
+    100%{
+        transform: scaleX(0.5); background-color: red;
+    }
+}
+
+@keyframes thirdPlanetRender{
+    0%{
+        background: linear-gradient(-90deg, darkgreen 50%, green 50%);
+    }
+
+    49%{
+        background: linear-gradient(-90deg, darkgreen 50%, green 50%);
+    }
+    49.1%{
+        background: linear-gradient(90deg, darkgreen 50%, green 50%);
+    }
+
+    99%{
+        background: linear-gradient(90deg, darkgreen 50%, green 50%);
+    }
+    99.1%{
+        background: linear-gradient(-90deg, darkgreen 50%, green 50%);
+    }
+
+    100%{
+            background-: linear-gradient(-90deg, darkgreen 50%, green 50%);
+    }
+}
+
+@keyframes thirdPlanetRenderRotater {
+    0%{
+        transform: scaleX(1); background-color: green;
+    }
+
+    25%{
+        transform: scaleX(0); background-color: green;
+    }
+    25.1%{
+        transform: scaleX(0); background-color: darkgreen;
+    }
+    49%{
+        transform: scaleX(-1); background-color: darkgreen;
+    }
+    49.1%{
+        transform: scaleX(1); background-color: darkgreen;
+    }
+    75%{
+        transform: scaleX(0); background-color: darkgreen;
+    }
+    75.1%{
+        transform: scaleX(0); background-color: green;
+    }
+    100%{
+        transform: scaleX(1); background-color: green;
+    }
+
+}
+
+#one{
+    animation: firstPlanetRender 12s infinite linear;
+}
+#two{
+    animation: secondPlanetRender 12s infinite linear;
+}
+#three{
+    animation: thirdPlanetRender 12s infinite linear;
+}
+
+
+#one:after{
+    animation: firstPlanetRenderRotater 12s infinite linear;
+}
+#two:after{
+    animation: secondPlanetRenderRotater 12s infinite linear;
+}
+#three:after{
+    animation: thirdPlanetRenderRotater 12s infinite linear;
+}
+
+
+#cplanet-two{
+    left: 85px;
+}
+#cplanet-three{
+    left: 42.5px;
+    top: 100px;
+}
+
+
+
+
+#iplanet-one{
+    animation: hideFirstPlanet 12s infinite;
+}
+#iplanet-two{
+    animation: hideSecondPlanet 12s infinite;
+}
+#iplanet-three{
+    animation: hideThirdPlanet 12s infinite;
+}
+
+@keyframes hideFirstPlanet{
+    0%{
+        z-index: 999;
+        transform: scale(0.9);
+    }
+    15%{
+        z-index: -999;
+    }
+    50%{
+        transform: scale(0.85);
+    }
+    75%{
+        transform: scale(1.2);
+    }
+    100%{
+        z-index: 999;
+        transform: scale(0.85);
+    }
+}
+
+@keyframes hideSecondPlanet{
+    0%{
+        z-index: -999;
+        transform: scale(0.95);
+    }
+    50%{
+        z-index: 999;
+    }
+    90%{
+        transform:scale(0.9);
+    }
+    100%{
+        z-index: -999;
+        transform: scale(0.95);
+    }
+}
+@keyframes hideThirdPlanet{
+    0%{
+        z-index: 999;
+        transform: scale(1.1);
+
+    }
+    50%{
+        z-index: -999;
+        transform: scale(0.8);
+    }
+    100%{
+        z-index: 999;
+        transform: scale(1.1);
+    }
+}
