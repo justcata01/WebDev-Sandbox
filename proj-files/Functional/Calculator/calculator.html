@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="calculator.css">
+        <script src="calculator.js"></script>
+    </head>
+
+    <body onload="updateDisplay()">
+        <div class="calculator-Row" id="Row1">
+            <button class="calculator-Button" onclick="window.location.reload();">Clear</button>
+            <br>
+        </div>
+
+        <div class="calculator-Display" id="Display"><p>23182581</p></div>
+        <div class="calculator-Container">
+            
+
+            <div class="calculator-Row" id="Row1">
+                <button class="calculator-Button" onclick="buttonPressed(1)">1</button>
+                <button class="calculator-Button" onclick="buttonPressed(4)">4</button>
+                <button class="calculator-Button" onclick="buttonPressed(7)">7</button>
+                <br>
+            </div>
+            <br />
+            <div class="calculator-Row" id="Row2">
+                <button class="calculator-Button" onclick="buttonPressed(2)">2</button>
+                <button class="calculator-Button" onclick="buttonPressed(5)">5</button>
+                <button class="calculator-Button" onclick="buttonPressed(8)">8</button>
+                <button class="calculator-Button" onclick="buttonPressed(0)">0</button>
+            </div>
+            <div class="calculator-Row" id="Row3">
+                <button class="calculator-Button" onclick="buttonPressed(3)">3</button>
+                <button class="calculator-Button" onclick="buttonPressed(6)">6</button>
+                <button class="calculator-Button" onclick="buttonPressed(9)">9</button>
+                <br>
+            </div>
+
+            <div class="calculator-Row" id="Row4">
+                <br>
+                <button class="calculator-Button" onclick="buttonPressed(10)">+</button>
+                <button class="calculator-Button" onclick="buttonPressed(11)">-</button>
+                <button class="calculator-Button" onclick="buttonPressed(12)">×</button>
+                <button class="calculator-Button" onclick="buttonPressed(13)">÷</button>
+                <button class="calculator-Button" onclick="equalsPress()">=</button>
+                <br>
+            </div>
+            
+        </div>
+        
+    </body>
+
+</html>
