@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Authentificator</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="authentificator.css">
+    <script src="authentificator.js"></script>
+    </head>
+    <body>
+        <div class="centered_div">
+            <div class="container">
+                <label for="uname">Username</label>
+                <input type="text" id="uname" name="username" placeholder="Your username..">
+                <br>
+                <br>
+                <label for="upass">Password</label>
+                <input type="text" id="upass" name="password" placeholder="Your password..">
+                <br>
+                <br>
+                <div class="centered_div"> <button class="submit_button" onclick="CheckLogin();" id="loginbutton">Login</button> </div>
+                <div class="centered_div"> <button class="register_button" onclick="Register();" id="registerbutton">Register</button> </div>
+                <br>
+                <div class="centered_div"> <p class="Message" id="status"></p> </div>
+            </div>
+            <ul style="color: aliceblue; font-size: large;" id="accountList">
+                <li style="color: lightgreen">Username : Password</li>
+                <li>admin : admin (Account Default)</li>
+            </ul>
+        </div>
+        
+
+    </body>
+</html>
