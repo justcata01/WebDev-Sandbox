@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    
+    <body>
+        <h1>Word Counter</h1>
+        <br>
+        <div class="container">
+            <button onclick="spellchecker()" id="spellCheckButton">Spell Checker: Off</button>
+        </div>
+        <br><br><br>
+        <div class="container">
+            <textarea placeholder="Write stuff here..." spellcheck="false" id="textArea"></textarea>
+        </div>
+        <br><br><br>
+        <div class="container">
+            <div id="counters">
+                <br><br>
+                <p id="counterWords">Words: 0</p>
+                <br>
+                <p id="counterChars">Letters: 0</p>
+                <br>
+            </div>
+            
+        </div>
+    </body>
+
+    <footer>
+
+    </footer>
+</html>
+
+<style>
+    *{
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    h1{
+        text-align: center;
+        color: 	#88937f;
+        text-shadow: 2px 2px #383c35;
+        font-family: sans-serif;
+    }
+    h1:hover{
+        color: 	#4e5746;
+        text-shadow: 2px 2px #1d201b;
+    }
+    body{
+        background-color: 	#767268;
+    }
+
+    .container{
+        display: flex;
+        justify-content: center;
+    }
+
+    textarea {
+        width: 50%;
+        height: 250px;
+        padding: 20px;
+        border: 1px solid #3b3b3b;
+        outline: none;
+        font-size: 1rem;
+        resize: none;
+        line-height: 1.5rem;
+        background-color: 	#b9b4a7;
+        color: #454545;
+        text-shadow: 0.25px 0.25px black;
+        font-family: sans-serif;
+    }
+    textarea:hover{
+        border: 1px solid black;
+        color: black;
+    }
+    #counters{
+        background-color: #b9b4a7;
+        border: 1px solid #3b3b3b;
+        width: 30%;
+        height: 300px;
+        padding: 20px;
+        text-align: center;
+        color: #88937f;
+        font-size: 24px;
+        font-family: sans-serif;
+        text-shadow: 2px 2px #383c35;
+    }
+    #counters:hover{
+        color: 	#ffffff;
+        text-shadow: 2px 2px #485242;
+    }
+
+    button {
+    background-color: #b9b4a7;
+    border: none;
+    color: 	#88937f;
+    text-shadow: 1px 1px #383c35;
+    font-family: sans-serif;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    float: left;
+    transition-duration: 0.4s;
+    border: 2px solid #3b3b3b;
+  }
+  button:hover {
+    background-color: #7f7b70;
+    color: 	#4e5746;
+    text-shadow: 2px 2px #1d201b;
+  }
+
+
+</style>
+
+<script>
+    var checkerOn = false;
+    const textInput = document.getElementById("textArea");
+    const wordCountElement = document.querySelector("#counterWords");
+    const letterCountElement = document.querySelector("#counterChars");
+    const spaceCountElement = document.querySelector("#counterSpaces");
+    const scb = document.querySelector("#spellCheckButton");
+
+    function spellchecker(){
+        switch(checkerOn){
+            case false: checkerOn = true; scb.innerHTML = "Spell Checker: On"; textInput.setAttribute("spellcheck", true); break;
+            case true: checkerOn = false;scb.innerHTML = "Spell Checker: Off"; textInput.setAttribute("spellcheck", false); break;
+        }
+    }
+
+    function atLeastTwoCharacters(text) {
+        const letters = text.match(/[a-z]/gi) || [];
+
+        return letters.length >= 2;
+    }
+
+    function abscenceOfThreeConsecutiveCharacters(text) {
+        for (const character of text) {
+            const occurrences = Array.from(text).filter((v) => v == character).length;
+
+            if (occurrences >= 3) {
+            return false;
+            }
+    }
+
+    return true;
+    }
+
+    const checks = [atLeastTwoCharacters, abscenceOfThreeConsecutiveCharacters];
+    
+    //I hate regex.
+    textInput.addEventListener("input", () => {
+    const splitted = textInput.value.trim().split(/[\s-]/);
+    const letterCount = (textInput.value.match(/[a-z]/gi) || []).length;
+    
+    let wordCount = 0;
+
+    keep: for (const text of splitted) {
+        for (const check of checks) {
+            if (!check(text)) {
+                continue keep;
+            }
+        }
+        wordCount++;
+    }
+
+    wordCountElement.textContent = "Words: " + wordCount;
+    letterCountElement.textContent = "Letters: " + letterCount;
+
+    });
+
+    
+    </script>
