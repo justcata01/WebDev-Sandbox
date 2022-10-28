@@ -44,7 +44,8 @@ body {
   .centered_div {
     display: flex;
     justify-content: center;
-
+    overflow: auto;
+    
     /* Extra */
     -webkit-touch-callout: none;
     -webkit-user-select: none;
