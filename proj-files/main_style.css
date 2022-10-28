@@ -33,6 +33,7 @@ body {
     float: left;
     transition-duration: 0.4s;
     border: 2px solid #466791;
+    height: 60px;
   }
   .basic_button:hover {
     background-color: #466791;
