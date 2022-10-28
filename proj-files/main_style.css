@@ -80,3 +80,9 @@ body {
     height: 100%;
     background-color:rgb(51, 61, 72);;
   }
+  #block-new-stuff{
+    width: 35%;
+    height: 100%;
+    background-color:rgb(53, 42, 59);;
+    border: 2px solid yellow;
+  }
