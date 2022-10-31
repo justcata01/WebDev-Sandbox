@@ -39,7 +39,15 @@ body {
     background-color: #466791;
     color: white;
   }
-
+  #best{
+    background-color: rgb(53, 42, 59);
+    color: yellow;
+    border: 2px solid white;
+  }
+  #best:hover{
+    background-color: black;
+    color: white;
+  }
 
   .centered_div {
     display: flex;
