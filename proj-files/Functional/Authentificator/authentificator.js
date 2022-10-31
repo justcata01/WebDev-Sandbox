@@ -40,9 +40,9 @@ function Register(){
     var li = document.createElement("li");
     li.appendChild(document.createTextNode(inputName + " : " + inputPass + " (Account " + accountX.toString()+")")); //add account
     li.setAttribute("id", "Account: "+accountX.toString()); // added line
+    alert("Created account number " + accountX);
     accountX+=1;
     ul.appendChild(li);
-    alert("Created account number: " + accountX);
 }
 
 function DidntWork()
